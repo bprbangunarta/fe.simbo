@@ -10,17 +10,23 @@ use Illuminate\Support\Facades\Auth;
 
 class RekeningController extends Controller
 {
-    public function index()
+    public function list()
     {
         $cif = Nasabah::where('user_id', Auth::id())->pluck('no_cif')->first();
-        // dd($cif);
 
-        $tabungan = Tabungan::where('nocif', $cif)
-            ->WhereNotin('kodeprd', ['11', '12'])
-            ->get();
-
+        $simapan = Tabungan::where('nocif', $cif)->where('kodeprd', 01)->get();
+        $siloka = Tabungan::where('nocif', $cif)->where('kodeprd', 02)->get();
+        $simantap = Tabungan::where('nocif', $cif)->where('kodeprd', 03)->get();
+        $simabrur = Tabungan::where('nocif', $cif)->whereIn('kodeprd', ['04', '05'])->get();
         $deposito = Deposito::where('nocif', $cif)->get();
 
-        return view('rekening.list', compact('tabungan', 'deposito'));
+        return view('rekening.list', compact(
+            'simapan',
+            'siloka',
+            'simantap',
+            'simabrur',
+            'deposito'
+            )
+        );
     }
 }

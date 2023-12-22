@@ -23,98 +23,254 @@
     <!-- App Capsule -->
     <div id="appCapsule">
 
-        <div class="section mt-2">
+        <!-- LIST SIMAPAN -->
+        @if($simapan->isNotEmpty())
+        <div class="section full mt-2 mb-2">
+            <!-- carousel single -->
+            <div class="carousel-single splide">
+                <div class="splide__track">
+                    <ul class="splide__list">
 
-            <!-- card block -->
-            @forelse ($tabungan as $item)
+                        @foreach ($simapan as $item)
+                        <li class="splide__slide">
+                            <!-- card block -->
+                            <div class="card-block bg-primary">
+                                <div class="card-button dropdown">
+                                    <a href="#" class="btn btn-link btn-icon">
+                                        <ion-icon name="copy-outline"></ion-icon>
+                                    </a>
+                                </div>
 
-            @if ($item->kodeprd == "01")
-                @php $bg = 'primary'; @endphp
-            @elseif ($item->kodeprd == "02")
-                @php $bg = 'info'; @endphp
-            @elseif ($item->kodeprd == "03")
-                @php $bg = 'danger'; @endphp
-            @elseif ($item->kodeprd == "04" || $item->kodeprd == "05")
-                @php $bg = 'warning'; @endphp
-            @endif
-
-            <div class="card-block bg-{{ $bg }} mb-2">
-                <div class="card-button dropdown">
-                    <a href="#" class="btn btn-link btn-icon">
-                        <ion-icon name="copy-outline"></ion-icon>
-                    </a>
-                </div>
-
-                <div class="card-main">
-                    <div class="balance">
-                        <span class="label">SALDO</span>
-                        <h1 class="title">Rp. {{ number_format($item->saldoakhir, 0, ',', '.') }}</h1>
-                    </div>
-                    <div class="in">
-                        <div class="card-number">
-                            <span class="label">Rekening</span>
-                            {{ $item->noacc }}
-                        </div>
-                        <div class="bottom">
-                            <div class="card-expiry">
-                                <span class="label">Produk</span>
-                                @if ($item->kodeprd == "01")
-                                    SIMAPAN
-                                @elseif ($item->kodeprd == "02")
-                                    SILOKA
-                                @elseif ($item->kodeprd == "03")
-                                    SIMANTAP
-                                @elseif ($item->kodeprd == "04")
-                                    SIMABRUR PAKET
-                                @elseif ($item->kodeprd == "05")
-                                    SIMABRUR NON PAKET
-                                @elseif ($item->kodeprd == "11")
-                                    ABP SIMAPAN
-                                @elseif ($item->kodeprd == "12")
-                                    ABP SILOKA
-                                @endif
+                                <div class="card-main">
+                                    <div class="balance">
+                                        <span class="label">SALDO</span>
+                                        <h1 class="title">Rp. {{ number_format($item->saldoakhir, 0, ',', '.') }}</h1>
+                                    </div>
+                                    <div class="in">
+                                        <div class="card-number text-light">
+                                            <span class="label">Rekening</span>
+                                            <font name="no_rekening" id="no_rekening">{{ $item->noacc }}</font>
+                                        </div>
+                                        <div class="bottom">
+                                            <div class="card-expiry">
+                                                <span class="label">Produk</span>
+                                                SIMAPAN
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
+                            <!-- * card block -->
+                        </li>
+                        @endforeach
+                    </ul>
                 </div>
             </div>
-            @empty
-            @endforelse
-            <!-- * card block -->
-
-            <!-- card block -->
-            @forelse ($deposito as $item)
-            <div class="card-block bg-dark mb-2">
-                <div class="card-button dropdown">
-                    <a href="#" class="btn btn-link btn-icon">
-                        <ion-icon name="copy-outline"></ion-icon>
-                    </a>
-                </div>
-                
-                <div class="card-main">
-                    <div class="balance">
-                        <span class="label">SALDO</span>
-                        <h1 class="title">Rp. {{ number_format($item->nomawal, 0, ',', '.') }}</h1>
-                    </div>
-                    <div class="in">
-                        <div class="card-number">
-                            <span class="label">Rekening</span>
-                            {{ $item->noacc }}
-                        </div>
-                        <div class="bottom">
-                            <div class="card-expiry">
-                                <span class="label">Produk</span>
-                                DEPOSITO
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            @empty
-            @endforelse
-            <!-- * card block -->
-
+            <!-- * carousel single -->
         </div>
+        @else
+        @endif
+        <!-- * LIST SIMAPAN -->
+
+        <!-- LIST SILOKA -->
+        @if($siloka->isNotEmpty())
+        <div class="section full mt-2 mb-2">
+            <!-- carousel single -->
+            <div class="carousel-single splide">
+                <div class="splide__track">
+                    <ul class="splide__list">
+
+                        @foreach ($siloka as $item)
+                        <li class="splide__slide">
+                            <!-- card block -->
+                            <div class="card-block bg-info">
+                                <div class="card-button dropdown">
+                                    <a href="#" class="btn btn-link btn-icon">
+                                        <ion-icon name="copy-outline"></ion-icon>
+                                    </a>
+                                </div>
+
+                                <div class="card-main">
+                                    <div class="balance">
+                                        <span class="label">SALDO</span>
+                                        <h1 class="title">Rp. {{ number_format($item->saldoakhir, 0, ',', '.') }}</h1>
+                                    </div>
+                                    <div class="in">
+                                        <div class="card-number">
+                                            <span class="label">Rekening</span>
+                                            <font name="no_rekening" id="no_rekening">{{ $item->noacc }}</font>
+                                        </div>
+                                        <div class="bottom">
+                                            <div class="card-expiry">
+                                                <span class="label">Produk</span>
+                                                SILOKA
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- * card block -->
+                        </li>
+                        @endforeach
+                    </ul>
+                </div>
+            </div>
+            <!-- * carousel single -->
+        </div>
+        @else
+        @endif
+        <!-- * LIST SILOKA -->
+
+        <!-- LIST SIMANTAP -->
+        @if($simantap->isNotEmpty())
+        <div class="section full mt-2 mb-2">
+            <!-- carousel single -->
+            <div class="carousel-single splide">
+                <div class="splide__track">
+                    <ul class="splide__list">
+
+                        @foreach ($simantap as $item)
+                        <li class="splide__slide">
+                            <!-- card block -->
+                            <div class="card-block bg-danger">
+                                <div class="card-button dropdown">
+                                    <a href="#" class="btn btn-link btn-icon">
+                                        <ion-icon name="copy-outline"></ion-icon>
+                                    </a>
+                                </div>
+
+                                <div class="card-main">
+                                    <div class="balance">
+                                        <span class="label">SALDO</span>
+                                        <h1 class="title">Rp. {{ number_format($item->saldoakhir, 0, ',', '.') }}</h1>
+                                    </div>
+                                    <div class="in">
+                                        <div class="card-number">
+                                            <span class="label">Rekening</span>
+                                            <font name="no_rekening" id="no_rekening">{{ $item->noacc }}</font>
+                                        </div>
+                                        <div class="bottom">
+                                            <div class="card-expiry">
+                                                <span class="label">Produk</span>
+                                                SIMANTAP
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- * card block -->
+                        </li>
+                        @endforeach
+                    </ul>
+                </div>
+            </div>
+            <!-- * carousel single -->
+        </div>
+        @else
+        @endif
+        <!-- * LIST SIMANTAP -->
+
+        <!-- LIST SIMABRUR -->
+        @if($simabrur->isNotEmpty())
+        <div class="section full mt-2 mb-2">
+            <!-- carousel single -->
+            <div class="carousel-single splide">
+                <div class="splide__track">
+                    <ul class="splide__list">
+
+                        @foreach ($simabrur as $item)
+                        <li class="splide__slide">
+                            <!-- card block -->
+                            <div class="card-block bg-warning">
+                                <div class="card-button dropdown">
+                                    <a href="#" class="btn btn-link btn-icon">
+                                        <ion-icon name="copy-outline"></ion-icon>
+                                    </a>
+                                </div>
+
+                                <div class="card-main">
+                                    <div class="balance">
+                                        <span class="label">SALDO</span>
+                                        <h1 class="title">Rp. {{ number_format($item->saldoakhir, 0, ',', '.') }}</h1>
+                                    </div>
+                                    <div class="in">
+                                        <div class="card-number">
+                                            <span class="label">Rekening</span>
+                                            <font name="no_rekening" id="no_rekening">{{ $item->noacc }}</font>
+                                        </div>
+                                        <div class="bottom">
+                                            <div class="card-expiry">
+                                                <span class="label">Produk</span>
+                                                SIMABRUR
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- * card block -->
+                        </li>
+                        @endforeach
+                    </ul>
+                </div>
+            </div>
+            <!-- * carousel single -->
+        </div>
+        @else
+        @endif
+        <!-- * LIST SIMABRUR -->
+    
+        <!-- LIST DEPOSITO -->
+        @if($deposito->isNotEmpty())
+        <div class="section full mt-2 mb-2">
+            <!-- carousel single -->
+            <div class="carousel-single splide">
+                <div class="splide__track">
+                    <ul class="splide__list">
+
+                        @foreach ($deposito as $item)
+                        <li class="splide__slide">
+                            <!-- card block -->
+                            <div class="card-block bg-dark">
+                                <div class="card-button dropdown">
+                                    <a href="#" class="btn btn-link btn-icon">
+                                        <ion-icon name="copy-outline"></ion-icon>
+                                    </a>
+                                </div>
+
+                                <div class="card-main">
+                                    <div class="balance">
+                                        <span class="label">SALDO</span>
+                                        <h1 class="title">Rp. {{ number_format($item->nomawal, 0, ',', '.') }}</h1>
+                                    </div>
+                                    <div class="in">
+                                        <div class="card-number">
+                                            <span class="label">Rekening</span>
+                                            <font name="no_rekening" id="no_rekening">{{ $item->noacc }}</font>
+                                        </div>
+                                        <div class="bottom">
+                                            <div class="card-expiry">
+                                                <span class="label">Produk</span>
+                                                @if ($item->kodeprd == "04")
+                                                    SIMABRUR PAKET
+                                                @elseif ($item->kodeprd == "05")
+                                                    SIMABRUR NON PAKET
+                                                @endif
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- * card block -->
+                        </li>
+                        @endforeach
+                    </ul>
+                </div>
+            </div>
+            <!-- * carousel single -->
+        </div>
+        @else
+        @endif
+        <!-- * LIST DEPOSITO -->
 
 
     </div>

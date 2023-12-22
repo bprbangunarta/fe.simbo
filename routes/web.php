@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\RekeningController;
+use App\Http\Controllers\HomeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,12 +24,16 @@ Route::middleware([
     config('jetstream.auth_session'),
     'verified',
 ])->group(function () {
-    Route::get('/dashboard', function () {
-        return view('dashboard');
-    })->name('dashboard');
+    // Route::get('/dashboard', function () {
+    //     return view('dashboard');
+    // })->name('dashboard');
 
     Route::controller(RekeningController::class)->group(function () {
-        Route::get('/rekening', 'index')->name('rekening.index');
+        Route::get('/rekening', 'list')->name('rekening.list');
+    });
+
+    Route::controller(HomeController::class)->group(function () {
+        Route::get('/dashboard', 'index')->name('home.index');
     });
 
 
