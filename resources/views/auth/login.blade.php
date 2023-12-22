@@ -8,7 +8,7 @@
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="theme-color" content="#000000">
-    <title>Page Login</title>
+    <title>Login</title>
     <link rel="icon" type="image/png" href="{{ asset('assets/login/img/favicon.png') }}" sizes="32x32">
     <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('assets/login/img/icon/192x192.png') }}">
     <link rel="stylesheet" href="{{ asset('assets/login/css/style.css') }}">
