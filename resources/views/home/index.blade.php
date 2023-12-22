@@ -44,35 +44,35 @@
                 <!-- Wallet Footer -->
                 <div class="wallet-footer">
                     <div class="item">
-                        <a href="#" data-bs-toggle="modal" data-bs-target="#withdrawActionSheet">
-                            <div class="icon-wrapper bg-danger">
-                                <ion-icon name="arrow-down-outline"></ion-icon>
+                        <a href="#" data-bs-toggle="modal" data-bs-target="#sendActionSheet">
+                            <div class="icon-wrapper">
+                                <ion-icon name="arrow-up-outline"></ion-icon>
                             </div>
-                            <strong>Withdraw</strong>
+                            <strong>Transfer</strong>
                         </a>
                     </div>
                     <div class="item">
-                        <a href="#" data-bs-toggle="modal" data-bs-target="#sendActionSheet">
-                            <div class="icon-wrapper">
-                                <ion-icon name="arrow-forward-outline"></ion-icon>
+                        <a href="#" data-bs-toggle="modal" data-bs-target="#withdrawActionSheet">
+                            <div class="icon-wrapper bg-danger">
+                                <ion-icon name="phone-portrait-outline"></ion-icon>
                             </div>
-                            <strong>Send</strong>
+                            <strong>Pulsa</strong>
                         </a>
                     </div>
                     <div class="item">
                         <a href="app-cards.html">
-                            <div class="icon-wrapper bg-success">
-                                <ion-icon name="card-outline"></ion-icon>
+                            <div class="icon-wrapper bg-warning">
+                                <ion-icon name="bulb-outline"></ion-icon>
                             </div>
-                            <strong>Cards</strong>
+                            <strong>Listrik</strong>
                         </a>
                     </div>
                     <div class="item">
                         <a href="#" data-bs-toggle="modal" data-bs-target="#exchangeActionSheet">
-                            <div class="icon-wrapper bg-warning">
-                                <ion-icon name="swap-vertical"></ion-icon>
+                            <div class="icon-wrapper" style="background:#00F6F7">
+                                <ion-icon name="water-outline"></ion-icon>
                             </div>
-                            <strong>Exchange</strong>
+                            <strong>PDAM</strong>
                         </a>
                     </div>
 

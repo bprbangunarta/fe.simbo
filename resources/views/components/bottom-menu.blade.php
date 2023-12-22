@@ -8,8 +8,8 @@
         </a>
         <a href="/transaksi" class="item {{ request()->is('transaksi', 'transaksi/detail') ? 'active' : '' }}">
             <div class="col">
-                <ion-icon name="repeat-outline"></ion-icon>
-                <strong>Transaksi</strong>
+                <ion-icon name="document-text-outline"></ion-icon>
+                <strong>Riwayat</strong>
             </div>
         </a>
 
