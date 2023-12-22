@@ -12,12 +12,14 @@ class RekeningController extends Controller
 {
     public function index()
     {
-        $cif = Nasabah::find(Auth::user()->id);
+        $cif = Nasabah::where('user_id', Auth::id())->pluck('no_cif')->first();
+        // dd($cif);
+
         $tabungan = Tabungan::where('nocif', $cif)
             ->WhereNotin('kodeprd', ['11', '12'])
             ->get();
 
-        $deposito = Deposito::where('nocif', '00133323808')->get();
+        $deposito = Deposito::where('nocif', $cif)->get();
 
         return view('rekening.list', compact('tabungan', 'deposito'));
     }

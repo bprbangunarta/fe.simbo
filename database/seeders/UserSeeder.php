@@ -32,6 +32,14 @@ class UserSeeder extends Seeder
                 'is_active'     => 1,
             ], $default_user_value));
 
+            User::create(array_merge([
+                'email'         => 'yandi@gmail.com',
+                'name'          => 'Yandi Rosyandi',
+                'username'      => 'yandi',
+                'phone'         => '081242758273',
+                'is_active'     => 1,
+            ], $default_user_value));
+
             DB::commit();
         } catch (\Throwable $th) {
             DB::rollBack();

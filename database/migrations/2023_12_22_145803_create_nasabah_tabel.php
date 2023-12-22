@@ -16,6 +16,7 @@ return new class extends Migration
             $table->foreignId('user_id')->nullable()->index();
             $table->string('no_cif', 11)->unique();
             $table->string('no_ktp', 16)->unique();
+            $table->string('no_tabungan', 16)->unique();
             $table->string('nama_nasabah');
             $table->string('alamat');
             $table->string('kelamin', 1);
