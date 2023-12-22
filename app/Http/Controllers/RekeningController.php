@@ -3,14 +3,17 @@
 namespace App\Http\Controllers;
 
 use App\Models\Deposito;
+use App\Models\Nasabah;
 use App\Models\Tabungan;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class RekeningController extends Controller
 {
     public function index()
     {
-        $tabungan = Tabungan::where('nocif', '00100107853')
+        $cif = Nasabah::find(Auth::user()->id);
+        $tabungan = Tabungan::where('nocif', $cif)
             ->WhereNotin('kodeprd', ['11', '12'])
             ->get();
 

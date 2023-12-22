@@ -59,21 +59,21 @@
             <li>
                 <a href="#" class="item">
                     <div class="in">
-                        <div>ZULFADLI RIZAL</div>
+                        <div>{{ Auth::user()->name }}</div>
                     </div>
                 </a>
             </li>
             <li>
                 <a href="#" class="item">
                     <div class="in">
-                        <div>082320099971</div>
+                        <div>{{ Auth::user()->phone }}</div>
                     </div>
                 </a>
             </li>
             <li>
                 <a href="#" class="item">
                     <div class="in">
-                        <div>zulfadlirizal@gmail.com</div>
+                        <div>{{ Auth::user()->email }}</div>
                     </div>
                 </a>
             </li>

@@ -40,7 +40,7 @@
                     @csrf
                     <div class="form-group boxed">
                         <div class="input-wrapper">
-                            <input type="email" class="form-control" name="email" id="email" placeholder="Email address" value="{{ old('email') }}">
+                            <input type="text" class="form-control" name="auth" id="auth" placeholder="Username" value="{{ old('auth') }}">
                             <i class="clear-input">
                                 <ion-icon name="close-circle"></ion-icon>
                             </i>
