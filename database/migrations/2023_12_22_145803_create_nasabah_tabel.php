@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('data_nasabah', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('user_id')->nullable()->index();
+            $table->foreignId('user_id')->unique()->index();
             $table->string('no_cif', 11)->unique();
             $table->string('no_ktp', 16)->unique();
             $table->string('no_tabungan', 16)->unique();
