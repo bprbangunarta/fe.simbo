@@ -28,10 +28,10 @@
                     <div class="left">
                         <span class="title">Saldo Tabungan</span>
                         <h1 class="total">
-                        @foreach($tabungan as $item)
-                            {{ number_format($item->saldoakhir, 0, ',', '.') }}
-                        @endforeach
-                            
+                            @foreach ($tabungan as $item)
+                                {{ number_format($item->saldoakhir, 0, ',', '.') }}
+                            @endforeach
+
                         </h1>
                     </div>
                     <div class="right">
@@ -106,7 +106,8 @@
                                 <div class="form-group basic">
                                     <label class="label">Nomor Rekening</label>
                                     <div class="input-group mb-2">
-                                        <input type="text" class="form-control" name="no_rekening" id="no_rekening" value="0010101201041458">
+                                        <input type="text" class="form-control" name="no_rekening" id="no_rekening"
+                                            value="0010101201041458">
                                     </div>
                                 </div>
 
@@ -147,7 +148,8 @@
                                 <div class="form-group basic">
                                     <div class="input-wrapper">
                                         <label class="label" for="text11d">To</label>
-                                        <input type="email" class="form-control" id="text11d" placeholder="Enter IBAN">
+                                        <input type="email" class="form-control" id="text11d"
+                                            placeholder="Enter IBAN">
                                         <i class="clear-input">
                                             <ion-icon name="close-circle"></ion-icon>
                                         </i>
@@ -292,47 +294,35 @@
 
         <div class="section full mt-2">
             <!-- carousel single -->
-            <div class="carousel-single splide splide--loop splide--ltr splide--draggable is-active" id="splide01" style="visibility: visible;">
+            <div class="carousel-single splide splide--loop splide--ltr splide--draggable is-active" id="splide01"
+                style="visibility: visible;">
                 <div class="splide__track" id="splide01-track" style="padding-left: 16px; padding-right: 16px;">
                     <ul class="splide__list" id="splide01-list" style="transform: translateX(-2105.98px);">
 
-                        <li class="splide__slide splide__slide--clone" aria-hidden="true" tabindex="-1" style="margin-right: 16px; width: 353.667px;">
-                            <img src="assets/img/sample/photo/wide1.jpg" alt="alt" class="imaged w-100">
-                        </li><li class="splide__slide splide__slide--clone" aria-hidden="true" tabindex="-1" style="margin-right: 16px; width: 353.667px;">
-                            <img src="assets/img/sample/photo/wide2.jpg" alt="alt" class="imaged w-100">
-                        </li><li class="splide__slide splide__slide--clone" aria-hidden="true" tabindex="-1" style="margin-right: 16px; width: 353.667px;">
-                            <img src="assets/img/sample/photo/wide3.jpg" alt="alt" class="imaged w-100">
-                        </li><li class="splide__slide splide__slide--clone" style="margin-right: 16px; width: 353.667px;">
-                            <img src="assets/img/sample/photo/wide1.jpg" alt="alt" class="imaged w-100">
-                        </li><li class="splide__slide splide__slide--clone" style="margin-right: 16px; width: 353.667px;">
-                            <img src="assets/img/sample/photo/wide2.jpg" alt="alt" class="imaged w-100">
-                        </li><li class="splide__slide splide__slide--clone" style="margin-right: 16px; width: 353.667px;">
-                            <img src="assets/img/sample/photo/wide3.jpg" alt="alt" class="imaged w-100">
-                        </li><li class="splide__slide is-active is-visible" id="splide01-slide01" aria-hidden="false" tabindex="0" style="margin-right: 16px; width: 353.667px;">
-                            <img src="assets/img/sample/photo/wide1.jpg" alt="alt" class="imaged w-100">
+                        <li class="splide__slide splide__slide--clone" aria-hidden="true" tabindex="-1"
+                            style="margin-right: 16px; width: 353.667px;">
+                            <img src="https://www.bni.co.id/Portals/1/xNews/uploads/2023/12/14/SFN-BannerWeb1350x488px_BNIDEBITCONTACTLESS-01.jpg"
+                                alt="alt" class="imaged w-100">
                         </li>
-
-                        <li class="splide__slide is-visible" id="splide01-slide02" aria-hidden="false" tabindex="0" style="margin-right: 16px; width: 353.667px;">
-                            <img src="assets/img/sample/photo/wide2.jpg" alt="alt" class="imaged w-100">
+                        <li class="splide__slide splide__slide--clone" aria-hidden="true" tabindex="-1"
+                            style="margin-right: 16px; width: 353.667px;">
+                            <img src="https://www.bni.co.id/Portals/1/xNews/uploads/2023/11/28/BNI-MBANK-WHOOSH-KERETA-CEPAT.png"
+                                alt="alt" class="imaged w-100">
                         </li>
-
-                        <li class="splide__slide is-visible" id="splide01-slide03" aria-hidden="false" tabindex="0" style="margin-right: 16px; width: 353.667px;">
-                            <img src="assets/img/sample/photo/wide3.jpg" alt="alt" class="imaged w-100">
+                        <li class="splide__slide splide__slide--clone" aria-hidden="true" tabindex="-1"
+                            style="margin-right: 16px; width: 353.667px;">
+                            <img src="https://www.bni.co.id/Portals/1/xNews/uploads/2023/12/11/Update-Fitur-Terbaru-Mobile-Banking_08122023.jpg"
+                                alt="alt" class="imaged w-100">
                         </li>
-
-                    <li class="splide__slide splide__slide--clone" style="margin-right: 16px; width: 353.667px;">
-                            <img src="assets/img/sample/photo/wide1.jpg" alt="alt" class="imaged w-100">
-                        </li><li class="splide__slide splide__slide--clone" style="margin-right: 16px; width: 353.667px;" aria-hidden="true" tabindex="-1">
-                            <img src="assets/img/sample/photo/wide2.jpg" alt="alt" class="imaged w-100">
-                        </li><li class="splide__slide splide__slide--clone" style="margin-right: 16px; width: 353.667px;" aria-hidden="true" tabindex="-1">
-                            <img src="assets/img/sample/photo/wide3.jpg" alt="alt" class="imaged w-100">
-                        </li><li class="splide__slide splide__slide--clone" style="margin-right: 16px; width: 353.667px;">
-                            <img src="assets/img/sample/photo/wide1.jpg" alt="alt" class="imaged w-100">
-                        </li><li class="splide__slide splide__slide--clone" style="margin-right: 16px; width: 353.667px;">
-                            <img src="assets/img/sample/photo/wide2.jpg" alt="alt" class="imaged w-100">
-                        </li><li class="splide__slide splide__slide--clone" style="margin-right: 16px; width: 353.667px;">
-                            <img src="assets/img/sample/photo/wide3.jpg" alt="alt" class="imaged w-100">
-                        </li></ul>
+                        <li class="splide__slide splide__slide--clone" style="margin-right: 16px; width: 353.667px;">
+                            <img src="https://www.bni.co.id/portals/1/BNI/Personal/Pinjaman/Images/BNI-GRIYA2023-Des.jpg"
+                                alt="alt" class="imaged w-100">
+                        </li>
+                        <li class="splide__slide splide__slide--clone" style="margin-right: 16px; width: 353.667px;">
+                            <img src="https://www.bni.co.id//Portals/1/DNNGalleryPro/uploads/2023/10/10/ADE_Cashback-100_-Transaksi-biller_FA_231006_Banner-Website.jpg"
+                                alt="alt" class="imaged w-100">
+                        </li>
+                    </ul>
                 </div>
             </div>
             <!-- * carousel single -->
