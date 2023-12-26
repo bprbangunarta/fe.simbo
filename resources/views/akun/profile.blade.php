@@ -24,8 +24,8 @@
     <div id="appCapsule">
 
         <div class="section mt-2">
-             <!-- card block -->
-             <div class="card-block bg-primary">
+            <!-- card block -->
+            <div class="card-block bg-primary">
                 <div class="card-button dropdown">
                     <a href="#" class="btn btn-link btn-icon">
                         <ion-icon name="copy-outline"></ion-icon>
@@ -74,13 +74,6 @@
                 <a href="#" class="item">
                     <div class="in">
                         <div>{{ Auth::user()->email }}</div>
-                    </div>
-                </a>
-            </li>
-            <li>
-                <a href="/hubungi-kami" class="item">
-                    <div class="in">
-                        <div>Lihat Mutasi Rekening</div>
                     </div>
                 </a>
             </li>
@@ -144,25 +137,25 @@
 @push('myscript')
     <script>
         function logout() {
-            fetch('{{ route("logout") }}', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/x-www-form-urlencoded',
-                    'X-CSRF-TOKEN': '{{ csrf_token() }}'
-                },
-                body: '_token={{ csrf_token() }}'
-            })
-            .then(response => {
-                if (response.ok) {
-                    console.log('Logout berhasil');
-                    window.location.href = '{{ route("login") }}';
-                } else {
-                    console.error('Gagal logout');
-                }
-            })
-            .catch(error => {
-                console.error('Kesalahan:', error);
-            });
+            fetch('{{ route('logout') }}', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/x-www-form-urlencoded',
+                        'X-CSRF-TOKEN': '{{ csrf_token() }}'
+                    },
+                    body: '_token={{ csrf_token() }}'
+                })
+                .then(response => {
+                    if (response.ok) {
+                        console.log('Logout berhasil');
+                        window.location.href = '{{ route('login') }}';
+                    } else {
+                        console.error('Gagal logout');
+                    }
+                })
+                .catch(error => {
+                    console.error('Kesalahan:', error);
+                });
         }
     </script>
 @endpush

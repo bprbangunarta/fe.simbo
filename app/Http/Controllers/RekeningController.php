@@ -7,6 +7,7 @@ use App\Models\Nasabah;
 use App\Models\Tabungan;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Http;
 
 class RekeningController extends Controller
 {
@@ -20,12 +21,14 @@ class RekeningController extends Controller
         $simabrur = Tabungan::where('nocif', $cif)->whereIn('kodeprd', ['04', '05'])->get();
         $deposito = Deposito::where('nocif', $cif)->get();
 
-        return view('rekening.list', compact(
-            'simapan',
-            'siloka',
-            'simantap',
-            'simabrur',
-            'deposito'
+        return view(
+            'rekening.list',
+            compact(
+                'simapan',
+                'siloka',
+                'simantap',
+                'simabrur',
+                'deposito'
             )
         );
     }

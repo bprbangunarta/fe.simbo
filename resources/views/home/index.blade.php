@@ -28,10 +28,7 @@
                     <div class="left">
                         <span class="title">Saldo Tabungan</span>
                         <h1 class="total">
-                            @foreach ($tabungan as $item)
-                                {{ number_format($item->saldoakhir, 0, ',', '.') }}
-                            @endforeach
-
+                            {{ number_format($tabungan['data']['saldoakhir'], 0, ',', '.') }}
                         </h1>
                     </div>
                     <div class="right">
