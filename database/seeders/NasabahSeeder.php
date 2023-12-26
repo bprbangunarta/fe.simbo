@@ -41,6 +41,18 @@ class NasabahSeeder extends Seeder
                 ]
             ));
 
+            Nasabah::create(array_merge(
+                [
+                    'user_id'       => 3,
+                    'no_cif'        => '00100107853',
+                    'no_ktp'        => '3213086709980002',
+                    'no_tabungan'   => '0010101201032010',
+                    'nama_nasabah'  => 'MUTIA WAHIDA RAHMI',
+                    'alamat'        => 'KAMPUNG BABAKAN SAPI RT/RW 008/002 BINONG BINONG SUBANG	',
+                    'kelamin'       => 'P',
+                ]
+            ));
+
             DB::commit();
         } catch (\Throwable $th) {
             DB::rollBack();

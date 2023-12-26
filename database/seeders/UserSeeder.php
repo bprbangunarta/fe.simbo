@@ -40,6 +40,14 @@ class UserSeeder extends Seeder
                 'is_active'     => 1,
             ], $default_user_value));
 
+            User::create(array_merge([
+                'email'         => 'mutiawr27@gmail.com',
+                'name'          => 'Mutia Wahida Rahmi',
+                'username'      => 'mutia',
+                'phone'         => '08112051232',
+                'is_active'     => 1,
+            ], $default_user_value));
+
             DB::commit();
         } catch (\Throwable $th) {
             DB::rollBack();
