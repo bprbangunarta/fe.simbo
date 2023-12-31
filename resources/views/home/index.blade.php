@@ -158,8 +158,8 @@
                                     <label class="label">Nominal</label>
                                     <div class="input-group mb-2">
                                         <span class="input-group-text">RP</span>
-                                        <input type="text" class="form-control" name="nominal" id="nominal"
-                                            required>
+                                        <input type="text" inputmode="numeric" class="form-control" name="nominal"
+                                            id="nominal" required>
                                     </div>
                                 </div>
 
