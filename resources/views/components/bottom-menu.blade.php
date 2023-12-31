@@ -13,7 +13,7 @@
             </div>
         </a>
 
-        <a href="#" class="item">
+        <a href="#" class="item" data-bs-toggle="modal" data-bs-target="#topupActionSheet">
             <div class="col">
                 <div class="action-button large">
                     <ion-icon name="add-outline" role="img" class="md hydrated"
