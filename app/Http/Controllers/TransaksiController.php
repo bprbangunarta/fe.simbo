@@ -30,8 +30,11 @@ class TransaksiController extends Controller
                 return view('error', compact('error_message'));
             }
         } else {
-            $error_message = $response->status() . ' ' . $response->body();
-            return view('error', compact('error_message'));
+            $transaksi = $response->json();
+            $error_message = $transaksi['data'];
+            return view('transaksi.mutasi', [
+                'transaksi' => $error_message,
+            ]);
         }
     }
 
@@ -45,13 +48,13 @@ class TransaksiController extends Controller
             $norek = $no_tabungan;
 
             if (is_array($transaksi)) {
-                // dd($transaksi);
                 return view('transaksi.mutasi-detail', compact('transaksi', 'norek'));
             } else {
                 $error_message = 'Invalid';
                 return view('error', compact('error_message'));
             }
         } else {
+
             $error_message = $response->status() . ' ' . $response->body();
             return view('error', compact('error_message'));
         }
