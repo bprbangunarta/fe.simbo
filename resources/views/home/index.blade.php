@@ -201,8 +201,7 @@
                             $param = $item['inptgljam'];
                         @endphp
 
-                        <a href="{{ route('transaksi.mutasi.detail', ['id' => $norek, 'param' => $param]) }}"
-                            class="item">
+                        <a href="{{ route('mutasi.detail', ['id' => $norek, 'param' => $param]) }}" class="item">
                             <div class="detail">
                                 <div>
                                     <strong>
