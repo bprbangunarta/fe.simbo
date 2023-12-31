@@ -105,7 +105,7 @@
                                     <label class="label">Nomor Rekening</label>
                                     <div class="input-group mb-2">
                                         <input type="text" class="form-control" name="no_rekening" id="no_rekening"
-                                            value="0010101201041458">
+                                            value="KODEBANK{{ $norek }}">
                                     </div>
                                 </div>
 

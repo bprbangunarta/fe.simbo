@@ -103,11 +103,11 @@
 
                                         @if ($item['dc'] == 'C')
                                             <div class="icon-box bg-primary">
-                                                <ion-icon name="swap-vertical-outline"></ion-icon>
+                                                <ion-icon name="arrow-up-outline"></ion-icon>
                                             </div>
                                         @elseif ($item['dc'] == 'D')
                                             <div class="icon-box bg-warning">
-                                                <ion-icon name="swap-vertical-outline"></ion-icon>
+                                                <ion-icon name="arrow-down-outline"></ion-icon>
                                             </div>
                                         @endif
                                         <div class="in">
