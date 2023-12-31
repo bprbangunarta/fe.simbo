@@ -191,12 +191,12 @@
         <!-- Transaksi -->
         <div class="section mt-2 mb-2">
             <div class="section-heading">
-                <h2 class="title">Transaksi</h2>
-                <a href="/transaksi" class="link text-primary">Lainnya</a>
+                <h2 class="title">Riwayat</h2>
+                <a href="{{ route('mutasi.index') }}" class="link text-primary">Lainnya</a>
             </div>
             <div class="transactions">
                 @if (is_array($transaksi) && isset($transaksi['data']))
-                    @foreach (array_slice($transaksi['data'], -5) as $item)
+                    @foreach (array_slice($transaksi['data'], 0, 5) as $item)
                         @php
                             $param = $item['inptgljam'];
                         @endphp
