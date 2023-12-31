@@ -14,7 +14,7 @@ class HomeController extends Controller
         $no_tabungan = Nasabah::where('user_id', Auth::id())->pluck('no_tabungan')->first();
 
         $saldoResponse = Http::get("https://api.bprbangunarta.co.id/api/v1/tabungan/$no_tabungan");
-        $transaksiResponse = Http::get("http://api.bprbangunarta.test/api/v1/transaksi/all/$no_tabungan");
+        $transaksiResponse = Http::get("http://api.bprbangunarta.test/api/v1/transaksi/$no_tabungan");
 
         if ($saldoResponse->successful()) {
             $saldo = $saldoResponse->json();
