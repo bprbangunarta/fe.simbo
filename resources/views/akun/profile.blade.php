@@ -34,18 +34,18 @@
 
                 <div class="card-main">
                     <div class="balance">
-                        <span class="label">SALDO</span>
-                        <h1 class="title">Rp. 6.999.999.999</h1>
+                        <span class="label">SALDO TABUNGAN</span>
+                        <h1 class="title">Rp. {{ number_format($saldo['data']['saldoakhir'], 0, ',', '.') }}</h1>
                     </div>
                     <div class="in">
                         <div class="card-number">
-                            <span class="label">Rekening</span>
-                            0010101201041458
+                            <span class="label">Nomor Rekening</span>
+                            {{ $norek }}
                         </div>
                         <div class="bottom">
                             <div class="card-expiry">
-                                <span class="label">Produk</span>
-                                SIMAPAN
+                                <span class="label">Tanggal Buka</span>
+                                {{ \Carbon\Carbon::parse($saldo['data']['tglbuka'])->locale('id')->format('d F Y') }}
                             </div>
                         </div>
                     </div>
@@ -106,13 +106,13 @@
 
         <div class="listview-title mt-1">Keamanan</div>
         <ul class="listview image-listview text inset mb-2">
-            <li>
+            {{-- <li>
                 <a href="#" class="item">
                     <div class="in">
                         <div>Rekening Aktif</div>
                     </div>
                 </a>
-            </li>
+            </li> --}}
 
             <li>
                 <a href="#" class="item">

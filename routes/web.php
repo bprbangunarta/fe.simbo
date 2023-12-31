@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AkunController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\RekeningController;
 use App\Http\Controllers\HomeController;
@@ -42,17 +43,11 @@ Route::middleware([
         Route::get('/rekening', 'list')->name('rekening.list');
     });
 
-
-
-
-
-    Route::get('/transaksi/detail', function () {
-        return view('transaksi.detail');
+    Route::controller(AkunController::class)->group(function () {
+        Route::get('/akun', 'index')->name('akun.profile');
     });
 
-    Route::get('/akun', function () {
-        return view('akun.profile');
-    });
+
 
     Route::get('/hubungi-kami', function () {
         return view('bantuan.hubungi-kami');
