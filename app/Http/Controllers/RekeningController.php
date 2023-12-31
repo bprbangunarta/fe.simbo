@@ -2,13 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Deposito;
 use App\Models\Nasabah;
-use App\Models\Tabungan;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Http;
-use Spatie\Ignition\Solutions\OpenAi\DummyCache;
 
 class RekeningController extends Controller
 {
