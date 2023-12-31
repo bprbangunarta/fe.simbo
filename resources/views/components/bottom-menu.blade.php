@@ -16,7 +16,8 @@
         <a href="#" class="item">
             <div class="col">
                 <div class="action-button large">
-                    <ion-icon name="add-outline" role="img" class="md hydrated" aria-label="arrow up outline"></ion-icon>
+                    <ion-icon name="add-outline" role="img" class="md hydrated"
+                        aria-label="arrow up outline"></ion-icon>
                 </div>
             </div>
         </a>
@@ -27,7 +28,8 @@
                 <strong>Rekening</strong>
             </div>
         </a>
-        <a href="/akun" class="item {{ request()->is('akun', 'syarat-ketentuan', 'hubungi-kami', 'pusat-bantuan') ? 'active' : '' }}">
+        <a href="/akun"
+            class="item {{ request()->is('akun', 'syarat-ketentuan', 'hubungi-kami', 'pusat-bantuan') ? 'active' : '' }}">
             <div class="col">
                 <ion-icon name="person-outline"></ion-icon>
                 <strong>Akun</strong>

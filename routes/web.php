@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\RekeningController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\TransaksiController;
 
 /*
 |--------------------------------------------------------------------------
@@ -28,21 +29,22 @@ Route::middleware([
     //     return view('dashboard');
     // })->name('dashboard');
 
-    Route::controller(RekeningController::class)->group(function () {
-        Route::get('/rekening', 'list')->name('rekening.list');
-    });
-
     Route::controller(HomeController::class)->group(function () {
         Route::get('/dashboard', 'index')->name('home.index');
     });
 
-
-
-
-
-    Route::get('/transaksi', function () {
-        return view('transaksi.list');
+    Route::controller(TransaksiController::class)->group(function () {
+        Route::get('/transaksi', 'index')->name('transaksi.mutasi');
+        Route::get('/transaksi/detail/{id?}/{param?}', 'show')->name('transaksi.mutasi.detail');
     });
+
+    Route::controller(RekeningController::class)->group(function () {
+        Route::get('/rekening', 'list')->name('rekening.list');
+    });
+
+
+
+
 
     Route::get('/transaksi/detail', function () {
         return view('transaksi.detail');

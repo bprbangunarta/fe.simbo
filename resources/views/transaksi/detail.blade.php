@@ -38,19 +38,30 @@
             <ul class="listview simple-listview no-space mt-3">
                 <li>
                     <span>Dari</span>
-                    <strong>Zulfadli Rizal</strong>
+                    <strong>{{ Auth::user()->name }}</strong>
                 </li>
                 <li>
-                    <span>Transaksi</span>
-                    <strong>Pembelian Pulsa</strong>
+                    <span>Rekening</span>
+                    <strong>{{ $norek }}</strong>
                 </li>
                 <li>
                     <span>Jumlah</span>
-                    <strong>Rp100.000</strong>
+
+                    @if ($transaksi['data']['dc'] == 'C')
+                        <strong class="text-success">
+                            + Rp{{ number_format($transaksi['data']['nominal'], 0, ',', '.') }}
+                        </strong>
+                    @elseif ($transaksi['data']['dc'] == 'D')
+                        <strong class="text-danger">
+                            - Rp{{ number_format($transaksi['data']['nominal'], 0, ',', '.') }}
+                        </strong>
+                    @endif
                 </li>
                 <li>
                     <span>Tanggal</span>
-                    <strong>8 Desember 2020 10:45</strong>
+                    <strong>
+                        {{ \Carbon\Carbon::parse($transaksi['data']['inptgljam'])->format('d M Y H:i:s') }}
+                    </strong>
                 </li>
             </ul>
 

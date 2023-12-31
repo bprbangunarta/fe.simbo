@@ -10,27 +10,16 @@ use Illuminate\Support\Facades\Http;
 
 class HomeController extends Controller
 {
-    // public function index()
-    // {
-    //     $no_tabungan = Nasabah::where('user_id', Auth::id())->pluck('no_tabungan')->first();
-
-    //     $tabungan = Tabungan::where('noacc', $no_tabungan)
-    //         ->WhereNotin('kodeprd', ['11', '12'])
-    //         ->get();
-
-    //     return view('home.index', compact('tabungan'));
-    // }
-
     public function index()
     {
         $no_tabungan = Nasabah::where('user_id', Auth::id())->pluck('no_tabungan')->first();
         $response = Http::get("https://api.bprbangunarta.co.id/api/v1/tabungan/$no_tabungan");
 
         if ($response->successful()) {
-            $tabungan = $response->json();
+            $saldo = $response->json();
 
-            if (is_array($tabungan)) {
-                return view('home.index', compact('tabungan'));
+            if (is_array($saldo)) {
+                return view('home.index', compact('saldo'));
             } else {
                 $error_message = 'Invalid';
                 return view('error', compact('error_message'));

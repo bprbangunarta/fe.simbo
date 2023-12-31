@@ -28,7 +28,7 @@
                     <div class="left">
                         <span class="title">Saldo Tabungan</span>
                         <h1 class="total">
-                            {{ number_format($tabungan['data']['saldoakhir'], 0, ',', '.') }}
+                            {{ number_format($saldo['data']['saldoakhir'], 0, ',', '.') }}
                         </h1>
                     </div>
                     <div class="right">
