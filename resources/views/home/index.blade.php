@@ -196,7 +196,7 @@
             </div>
             <div class="transactions">
                 @if (is_array($transaksi) && isset($transaksi['data']))
-                    @foreach ($transaksi['data'] as $item)
+                    @foreach (array_slice($transaksi['data'], -5) as $item)
                         @php
                             $param = $item['inptgljam'];
                         @endphp
