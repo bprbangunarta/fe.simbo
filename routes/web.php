@@ -35,7 +35,7 @@ Route::middleware([
 
     Route::controller(TransaksiController::class)->group(function () {
         Route::get('/transaksi', 'index')->name('transaksi.mutasi');
-        Route::get('/transaksi/detail/{id?}/{param?}', 'show')->name('transaksi.mutasi.detail');
+        Route::get('/transaksi/{id?}/{param?}', 'show')->name('transaksi.mutasi.detail');
     });
 
     Route::controller(RekeningController::class)->group(function () {

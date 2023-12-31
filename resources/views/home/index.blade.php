@@ -332,32 +332,37 @@
                 <a href="/transaksi" class="link text-primary">Lainnya</a>
             </div>
             <div class="transactions">
-                <!-- item -->
-                <a href="app-transaction-detail.html" class="item">
-                    <div class="detail">
-                        <div>
-                            <strong>18 Desember 2023</strong>
-                            <p>Penarikan Tab An ZULFADLI RIZAL</p>
-                        </div>
-                    </div>
-                    <div class="right">
-                        <div class="price text-danger">-250,000.00</div>
-                    </div>
-                </a>
-                <!-- * item -->
-                <!-- item -->
-                <a href="app-transaction-detail.html" class="item">
-                    <div class="detail">
-                        <div>
-                            <strong>18 Desember 2023</strong>
-                            <p>SET VIA VA-PMT-0010101201041458 ZULFADLI</p>
-                        </div>
-                    </div>
-                    <div class="right">
-                        <div class="price text-success">+10,000.00</div>
-                    </div>
-                </a>
-                <!-- * item -->
+                @if (is_array($transaksi) && isset($transaksi['data']))
+                    @foreach ($transaksi['data'] as $item)
+                        @php
+                            $param = $item['inptgljam'];
+                        @endphp
+
+                        <a href="{{ route('transaksi.mutasi.detail', ['id' => $norek, 'param' => $param]) }}"
+                            class="item">
+                            <div class="detail">
+                                <div>
+                                    <strong>
+                                        {{ \Carbon\Carbon::parse($item['tgltrn'])->locale('id')->format('d F Y') }}
+                                    </strong>
+                                    <p>{{ $item['ket'] }}</p>
+                                </div>
+                            </div>
+                            <div class="right">
+                                @if ($item['dc'] == 'C')
+                                    <div class="price text-success">
+                                        +{{ number_format($item['nominal'], 0, ',', '.') }}
+                                    </div>
+                                @elseif ($item['dc'] == 'D')
+                                    <div class="price text-danger">
+                                        -{{ number_format($item['nominal'], 0, ',', '.') }}
+                                    </div>
+                                @endif
+                            </div>
+                        </a>
+                    @endforeach
+                @else
+                @endif
             </div>
         </div>
         <!-- * Transaksi -->

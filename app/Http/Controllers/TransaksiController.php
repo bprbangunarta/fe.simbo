@@ -12,7 +12,7 @@ class TransaksiController extends Controller
     public function index()
     {
         $no_tabungan = Nasabah::where('user_id', Auth::id())->pluck('no_tabungan')->first();
-        $response = Http::get("https://api.bprbangunarta.co.id/api/v1/transaksi/0010101201041458");
+        $response = Http::get("https://api.bprbangunarta.co.id/api/v1/transaksi/$no_tabungan");
 
         if ($response->successful()) {
             $transaksi = $response->json();
