@@ -11,6 +11,11 @@ class TransaksiController extends Controller
 {
     public function index()
     {
+        return view('transaksi.index');
+    }
+
+    public function mutasi()
+    {
         $no_tabungan = Nasabah::where('user_id', Auth::id())->pluck('no_tabungan')->first();
         $response = Http::get("https://api.bprbangunarta.co.id/api/v1/transaksi/lastmonth/$no_tabungan");
 
@@ -19,7 +24,7 @@ class TransaksiController extends Controller
             $norek = $no_tabungan;
 
             if (is_array($transaksi)) {
-                return view('transaksi.list', compact('transaksi', 'norek'));
+                return view('transaksi.mutasi', compact('transaksi', 'norek'));
             } else {
                 $error_message = 'Invalid';
                 return view('error', compact('error_message'));
@@ -30,7 +35,7 @@ class TransaksiController extends Controller
         }
     }
 
-    public function show($id, $param)
+    public function show_mutasi($id, $param)
     {
         $no_tabungan = Nasabah::where('user_id', Auth::id())->pluck('no_tabungan')->first();
         $response = Http::get("https://api.bprbangunarta.co.id/api/v1/transaksi/$id/$param");
@@ -41,7 +46,7 @@ class TransaksiController extends Controller
 
             if (is_array($transaksi)) {
                 // dd($transaksi);
-                return view('transaksi.detail', compact('transaksi', 'norek'));
+                return view('transaksi.mutasi-detail', compact('transaksi', 'norek'));
             } else {
                 $error_message = 'Invalid';
                 return view('error', compact('error_message'));

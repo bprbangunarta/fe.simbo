@@ -6,7 +6,8 @@
                 <strong>Home</strong>
             </div>
         </a>
-        <a href="/transaksi" class="item {{ request()->is('transaksi', 'transaksi/*/*') ? 'active' : '' }}">
+        <a href="/transaksi"
+            class="item {{ request()->is('transaksi', 'transaksi/*/*', 'mutasi', 'mutasi/*/*') ? 'active' : '' }}">
             <div class="col">
                 <ion-icon name="document-text-outline"></ion-icon>
                 <strong>Riwayat</strong>
